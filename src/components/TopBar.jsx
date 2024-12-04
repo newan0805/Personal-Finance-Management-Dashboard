@@ -52,7 +52,7 @@ const TopBar = ({ darkMode, toggleDarkMode }) => {
   };
 
   return (
-    <AppBar position="sticky" sx={{borderRadius: 2, marginBottom: 2}}>
+    <AppBar position="sticky" sx={{ borderRadius: 2, marginBottom: 2 }}>
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Personal Finance Manager
@@ -83,7 +83,9 @@ const TopBar = ({ darkMode, toggleDarkMode }) => {
         }}
       >
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
-        <MenuItem onClick={toggleDarkMode}>{!darkMode ? "dark" : "light"}</MenuItem>
+        <MenuItem onClick={toggleDarkMode}>
+          {!darkMode ? "Dark" : "Light"}
+        </MenuItem>
         <MenuItem onClick={handleResetAll}>Reset All</MenuItem>
       </Menu>
     </AppBar>

@@ -36,15 +36,24 @@ const App = () => {
   return (
     <AlertProvider>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Router>
-          {/* <DarkModeSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} /> */}
-          <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/dashboard" element={<Dashboard darkMode={darkMode} toggleDarkMode={toggleDarkMode} />} />
-          </Routes>
-        </Router>
-        <AlertCard />
+        <CssBaseline>
+          <Router>
+            {/* <DarkModeSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} /> */}
+            <Routes>
+              <Route path="/" element={<LoginPage />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <Dashboard
+                    darkMode={darkMode}
+                    toggleDarkMode={toggleDarkMode}
+                  />
+                }
+              />
+            </Routes>
+          </Router>
+          <AlertCard />
+        </CssBaseline>
       </ThemeProvider>
     </AlertProvider>
   );

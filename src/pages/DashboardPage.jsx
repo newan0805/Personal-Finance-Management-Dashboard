@@ -28,7 +28,7 @@ const DashboardPage = ({ darkMode, toggleDarkMode }) => {
         borderRadius={2}
       >
         <TopBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        
+
         {/* <Typography variant="h3" gutterBottom>
           Personal Finance Dashboard
         </Typography> */}
@@ -48,7 +48,7 @@ const DashboardPage = ({ darkMode, toggleDarkMode }) => {
             </Paper>
             <Box sx={{ marginTop: 4 }}>
               <Typography variant="h6">
-                Total Expenses: LKR{" "}
+                Total Expenses: LKR {" "}
                 {expenses.reduce((acc, expense) => acc + expense.amount, 0)}
               </Typography>
               {budget && (

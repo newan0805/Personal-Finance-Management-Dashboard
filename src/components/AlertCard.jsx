@@ -28,6 +28,8 @@ const AlertCard = () => {
     }
   };
 
+  console.log(theme);
+
   useEffect(() => {
     if (show) {
       // document.body.style.filter = "blur(5px)";

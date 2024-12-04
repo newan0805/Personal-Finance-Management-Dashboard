@@ -10,12 +10,15 @@ import {
 import { useAlert } from "../context/AlertContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "@emotion/react";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { triggerAlert } = useAlert();
+  const theme = useTheme();
+
+  const { triggerAlert, closeAlert } = useAlert();
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -33,9 +36,9 @@ const LoginPage = () => {
         title: "Success",
         description: `Login successful!`,
         onConfirm: () => {
-          navigate("/dashboard");
         },
       });
+      setTimeout(()=> {navigate("/dashboard"), closeAlert()}, 2000);
     }
   };
 
@@ -47,7 +50,7 @@ const LoginPage = () => {
         alignItems="center"
         justifyContent="center"
         minHeight="100vh"
-        bgcolor="#fff"
+        backgroundColor={theme.palette.background.paper}
         p={2}
       >
         <Typography variant="h4" gutterBottom>
